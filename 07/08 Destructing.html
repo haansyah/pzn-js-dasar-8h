@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring</title>
+  </head>
+  <body>
+    <h3>Destructuring</h3>
+    <ul>
+      <li>
+        Destructuring adalah fitur yang bisa digunakan untuk membongkar
+        value-value di array atau object ke dalam variable-variable
+      </li>
+      <li>
+        Fitur ini sangat mempermudah kita ketika ingin mengambil data dari array
+        atau object tanpa harus melakukan pengambilan data satu persatu
+      </li>
+    </ul>
+    <script>
+      {
+        const names = ["Ari", "Ake", "Aku"];
+        const [...others] = names;
+        console.log(...others);
+      }
+
+      {
+        const person = {
+          firstName: "Eko",
+          lastName: "Khannedy",
+          address: {
+            street: "Belum ada",
+            city: "Jakarta",
+            country: "Indonesia",
+          },
+          hobby: "Games",
+          channel: "Programmer jaman now",
+        };
+
+        let {
+          firstName,
+          lastName,
+          address: { country, city, street },
+          ...others
+        } = person;
+
+        console.log(firstName);
+        console.log(lastName);
+        console.log(city);
+        console.log(street);
+        console.log(country);
+        console.log(others);
+      }
+
+      {
+        function displayPerson({ firstName, middleName, lastName }) {
+          console.log(firstName);
+          console.log(middleName);
+          console.log(lastName);
+        }
+
+        const person = {
+          firstName: "Ari",
+          middleName: "Kun",
+          lastName: "Sutarman",
+        };
+
+        displayPerson(person);
+      }
+
+      {
+        function sum([first, second]) {
+          return first + second;
+        }
+
+        console.log(sum([1, 2]));
+        console.log(sum([5, 2]));
+      }
+
+      {
+        const names = ["Ari"];
+        const [firstName, middleName = "Kurniawan", lastName = "Khannedy"] =
+          names;
+
+        console.log(firstName);
+        console.log(middleName);
+        console.log(lastName);
+      }
+
+      {
+        const person = {
+          firstName: "Eko",
+          lastName: "Khannedy",
+        };
+
+        let { firstName: namaDepan, lastName: namaAkhir = "Sutarman" } = person;
+
+        console.log(namaDepan);
+        console.log(namaAkhir);
+      }
+    </script>
+  </body>
+</html>

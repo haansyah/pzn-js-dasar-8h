@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strict Mode</title>
+  </head>
+  <body>
+    <h3>Strict Mode</h3>
+    <ul>
+      <li>digunakan diawal file JS atau diawal fungsi</li>
+      <li>gunannya untuk memberi tahu bahwa ada fungsi js yang desprecated</li>
+    </ul>
+    <script>
+      function useStrictMode() {
+        "use strict";
+        const person = {
+          firstName: "Eko",
+        };
+
+        //error
+        // with (person) {
+        //   console.log(firstName);
+        // }
+      }
+
+      useStrictMode();
+    </script>
+  </body>
+</html>
